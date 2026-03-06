@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Family Invitation</title>
+
+<style>
+
+body{
+margin:0;
+font-family:Arial;
+text-align:center;
+background-image:url("ramadan.jpg.jpeg");
+background-size:cover;
+background-position:center;
+background-repeat:no-repeat;
+height:100vh;
+color:white;
+}
+
+.container{
+padding:40px;
+background:rgba(0,0,0,0.45);
+border-radius:20px;
+margin:40px;
+}
+
+h1{
+font-size:40px;
+}
+
+#countdown{
+font-size:35px;
+margin-top:15px;
+font-weight:bold;
+}
+
+button{
+padding:15px 25px;
+font-size:18px;
+background:#27ae60;
+color:white;
+border:none;
+border-radius:10px;
+cursor:pointer;
+margin-top:20px;
+}
+
+button:hover{
+background:#1e8449;
+}
+
+.map{
+margin-top:30px;
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h1>مبارك عليكم الشهر الفضيل</h1>
+
+<p>مرحبا بكم في افطار العائلة</p>
+
+<h2>time for breakfast</h2>
+
+<div id="countdown"></div>
+
+<a href="https://maps.app.goo.gl/ktuTCNdPpeqR14Hq6?g_st=ic" target="_blank">
+<br>
+<button>Open Location</button>
+</a>
+
+<div class="map">
+
+<iframe
+width="350"
+height="250"
+style="border-radius:15px;border:none"
+loading="lazy"
+src="PUT_GOOGLE_EMBED_MAP">
+</iframe>
+
+</div>
+
+</div>
+
+<script>
+
+var countDownDate = new Date("March 9, 2026 18:40:00").getTime();
+
+var x = setInterval(function() {
+
+var now = new Date().getTime();
+
+var distance = countDownDate - now;
+
+var days = Math.floor(distance / (1000*60*60*24));
+var hours = Math.floor((distance % (1000*60*60*24)) / (1000*60*60));
+var minutes = Math.floor((distance % (1000*60*60)) / (1000*60));
+var seconds = Math.floor((distance % (1000*60)) / 1000);
+
+document.getElementById("countdown").innerHTML =
+days + "d " + hours + "h " + minutes + "m " + seconds + "s ";
+
+if(distance < 0){
+clearInterval(x);
+document.getElementById("countdown").innerHTML = "Breakfast Time!";
+}
+
+},1000);
+
+</script>
+
+</body>
+
+</html>
